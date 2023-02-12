@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div id="form" class="form">
+        <form name="f1" onsubmit="return validation()" method="GET">
+          <h1>Register here</h1>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            class="fields"
+            placeholder="Name"
+            onblur="validateName()"
+          />
+          <br />
+          <div id="err1" class="error">Please enter a name</div>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="fields"
+            placeholder="Email"
+            onblur="validateEmail()"
+          />
+          <br />
+          <div id="err2" class="error">Please enter an email</div>
+          <span id="err3" class="valid">Please enter a valid email</span>
+          <input
+            id="number"
+            name="number"
+            type="number"
+            class="fields"
+            placeholder="Mobile Number (optional)"
+          />
+          <br />
+          <div id="gender">
+            <label id="gend">Gender: </label>
+            <input
+              type="radio"
+              id="male"
+              name="gender"
+              value="male"
+              onclick="validateGender()"
+            /><label class="radio" for="male">Male</label>
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              onclick="validateGender()"
+            /><label class="radio" for="female">Female</label>
+            <span id="err4" class="error">Please select gender</span>
+          </div>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            class="fields"
+            placeholder="Username"
+            onblur="validateUsername()"
+          />
+          <br />
+          <div id="err8" class="error">Please enter a username</div>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            class="fields"
+            placeholder="Password"
+            onblur="validatePassword()"
+          />
+          <br />
+          <div id="err5" class="error">Please enter a password.</div>
+          <span id="err6" class="valid"
+            >Password should be min 8 characters containing atleast one special
+            character, one uppercase letter and one number</span
+          >
+          <input
+            id="confirm"
+            name="confirm-password"
+            type="password"
+            class="fields"
+            placeholder="Confirm Password"
+            onblur="confirmPassword()"
+          />
+          <br />
+          <div id="err7" class="error">Password doesn't match</div>
+          <div id="signup">
+            <input type="checkbox" id="check" value="newsletter" />
+            <label for="check" class="checkbox">Signup for newsletter</label>
+          </div>
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+
+    <script src="validation.js"></script>
+  </body>
+</html>
